@@ -1,0 +1,70 @@
+@import "../variables/Colores";
+@import "../variables/mixin";
+
+.registro-body{
+    background-color: $verdeOscuro;
+    color: $blancoHumo;
+    height: 100vh;
+    .registro-container{
+        @include flex;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+        padding: 2rem;
+    }
+    form{
+        @include flex;
+        width: 100%;
+        max-width: 350px;
+        input {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 20px;
+            font-size: 1rem;
+            background-color: $transparente;
+            color: $blancoHumo;
+            &::placeholder{
+                color: $grisClaro;
+            }
+        }
+        button{
+            padding: 1rem;
+            border: none;
+            border-radius: 25px;
+            width: 60%;
+            background-color: $doradoViejo;
+            color: $verdeOscuro;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            transition: background-color 0.3s ease;
+            &:hover{
+                background-color: #a89c55;
+            }
+        }
+    }
+
+    #mensajeError{
+        color: #ff0000; 
+        margin-top: 1rem;
+    }
+    #mensajeExito{
+        color: $doradoViejo; 
+        margin-top: 1rem;
+    }
+
+    .registro-options {
+        p{
+            margin-bottom: 0.5rem;
+        }
+        a{
+            color: $grisClaro;
+            text-decoration: underline;
+            &:hover{
+                color: $doradoViejo;
+            }
+        }
+    }
+}
+

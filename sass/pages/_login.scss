@@ -1,0 +1,69 @@
+@import "../variables/Colores";
+@import "../variables/mixin";
+
+
+body{
+    background-color: $verdeOscuro;
+    color: $blancoHumo;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.login-container{
+    @include flex;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 2rem;
+    .logo-login{
+        width: 150px;
+        margin-bottom: 1rem;
+    }
+    form{
+        @include flex;
+        width: 100%;
+        max-width: 300px;
+        input{
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 20px;
+            font-size: 1rem;
+            background-color: $transparente;
+            color: $blancoHumo;
+        }
+        button{
+            padding: 1rem;
+            border: none;
+            border-radius: 25px;
+            width: 50%;
+            background-color: $doradoViejo;
+            color: $verdeOscuro;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            transition: backgroud 0.3s ease;
+            &:hover{
+                background-color: #a89c55;
+            }
+        }
+    }
+    .login-options{
+        p{
+            margin-bottom: 0.5rem;
+        }
+        a{
+            color: $grisClaro;
+            text-decoration: underline;
+            &:hover{
+                color: $doradoViejo;
+            }
+        }
+    }
+    #btnInvitado{
+        color: $grisClaro;
+        &:hover{
+            color: $doradoViejo;
+        }
+    }
+}

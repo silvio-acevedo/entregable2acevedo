@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <title>Cervecería Córdoba Brewery Co. - Selección de mesa</title>
+</head>
+
+<body class="mesa-body">
+    <header class="mesa-header">
+        <div class="info-usuario">
+            <span class="material-symbols-outlined">account_circle</span>
+            <span id="saludo">Bienvenido</span>
+        </div>
+    </header>
+
+    <main class="mesa-main">
+        <h1>Selecciona tu mesa</h1>
+
+        <div class="mesa-selector">
+            <label for="mesa">Elige tu mesa:</label>
+            <select id="mesa">
+                <option value="">-- Seleccionar --</option>
+                <option value="1">Mesa 1</option>
+                <option value="2">Mesa 2</option>
+                <option value="3">Mesa 3</option>
+                <option value="4">Mesa 4</option>
+                <option value="5">Mesa 5</option>
+                <option value="6">Mesa 6</option>
+                <option value="7">Mesa 7</option>
+                <option value="8">Mesa 8</option>
+                <option value="9">Mesa 9</option>
+                <option value="10">Mesa 10</option>
+                <option value="11">Mesa 11</option>
+                <option value="12">Mesa 12</option>
+                <option value="13">Mesa 13</option>
+                <option value="14">Mesa 14</option>
+                <option value="15">Mesa 15</option>                    
+                <option value="16">Mesa 16</option>
+                <option value="17">Mesa 17</option>
+                <option value="18">Mesa 18</option>
+                <option value="19">Mesa 19</option>
+                <option value="20">Mesa 20</option>
+                
+            </select>
+        </div>
+
+        <p id="mensajeError" class="mensaje-error"></p>
+
+        <button id="btnContinuar" disabled aria-label="Continuar a menú">Ir al Menú</button>
+    </main>
+
+    <script src="../js/mesa.js"></script>
+</body>
+</html>

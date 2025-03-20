@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+    <title>Login - Cervecería Córdoba Brewery Co.</title>
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+<body class="login">
+
+    <div class="login-container">
+        <img src="./img/cordoba-txt.png" alt="Logo" class="logo-login" />
+
+        <div id="mensaje" class="mensaje"></div>
+
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Usuario" required />
+            <input type="password" id="password" placeholder="Contraseña" required />
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+
+        <div class="login-options">
+            <p>¿No tenés cuenta? <a href="./page/registro.html" id="linkRegistro">Registrate</a></p>
+            <p>o</p>
+            <p><a href="./page/mesa.html" id="invitados">Entrar como invitado</a></p>
+        </div>
+    </div>
+
+    <script src="./js/login.js"></script>
+</body>
+</html>

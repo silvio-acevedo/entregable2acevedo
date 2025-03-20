@@ -1,0 +1,96 @@
+@import "../variables/Colores";
+@import "../variables/mixin";
+
+.mesa-body {
+    background-color: $grisClaro; 
+    color: $verdeOscuro; 
+}
+
+.mesa-header {
+    background-color: $verdeOscuro;
+    color: $blancoHumo; 
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: 0 4px 8px $transparente;
+    border-radius: 0 0 20px 20px;
+    .info-usuario {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        .material-symbols-outlined {
+            font-size: 2.2rem;
+            color: $blancoHumo;
+        }
+    }
+}
+
+.mesa-main {
+    flex-grow: 1;
+    @include flex;
+    justify-content: center;
+    background-color: $blancoHumo;
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px $transparente;
+    h1 {
+        margin-bottom: 1.5rem;
+        color: $verdeOscuro; 
+    }
+}
+
+
+/* SELECTOR DE MESA */
+.mesa-selector {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    select {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+        border-radius: 6px;
+        border: 1px solid $grisClaro;
+        background-color: $blancoHumo;
+        color: $verdeOscuro;
+        transition: border-color 0.3s ease;
+        &:focus {
+            border-color: $doradoViejo; 
+            outline: none;
+        }
+    }
+}
+
+#btnContinuar {
+    padding: 0.75rem 2rem;
+    background-color: $doradoViejo; /* Dorado Viejo */
+    color: $verdeOscuro; /* Verde Oscuro */
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    &:disabled {
+        background-color: $grisClaro; 
+        color: #999;
+        cursor: not-allowed;
+    }
+    &:hover:not(:disabled) {
+        background-color: #a49358; 
+        transform: translateY(-2px);
+    }
+}
+
+@media (max-width: 480px) {
+    .mesa-main {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .mesa-header {
+        justify-content: center;
+    }
+}
+

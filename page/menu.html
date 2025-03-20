@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Icons Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <title>Cervecería Córdoba Brewery Co. - Menú</title>
+</head>
+
+<body>
+    <header class="mesa-header">
+        <div class="info-usuario">
+            <span class="material-symbols-outlined">account_circle</span>
+            <span id="saludo">Bienvenido</span>
+        </div>
+    </header>
+    <div class="menu">
+        <div class="card" data-price="10000">
+            <img src="" alt="Producto 1">
+            <h2>Producto 1</h2>
+            <p>$10000</p>
+            <button onclick="addToCart(10000, 'Producto 1')">Agregar al carrito</button>
+        </div>
+        <div class="card" data-price="11000">
+            <img src="" alt="Producto 2">
+            <h2>Producto 2</h2>
+            <p>$11000</p>
+            <button onclick="addToCart(11000, 'Producto 2')">Agregar al carrito</button>
+        </div>
+        <div class="card" data-price="12000">
+            <img src="" alt="Producto 3">
+            <h2>Producto 3</h2>
+            <p>$12000</p>
+            <button onclick="addToCart(12000, 'Producto 3')">Agregar al carrito</button>
+        </div>
+        <div class="card" data-price="13000">
+            <img src="" alt="Producto 4">
+            <h2>Producto 4</h2>
+            <p>$13000</p>
+            <button onclick="addToCart(13000, 'Producto 4')">Agregar al carrito</button>
+        </div>
+        <div class="card" data-price="14000">
+            <img src="" alt="Producto 5">
+            <h2>Producto 5</h2>
+            <p>$14000</p>
+            <button onclick="addToCart(14000, 'Producto 5')">Agregar al carrito</button>
+        </div>
+        <div class="card" data-price="15000">
+            <img src="" alt="Producto 6">
+            <h2>Producto 6</h2>
+            <p>$15000</p>
+            <button onclick="addToCart(15000, 'Producto 6')">Agregar al carrito</button>
+        </div>
+    </div>
+
+    <div class="cart">
+        <h3>Carrito de compras</h3>
+        <p id="cart-items">No hay productos en el carrito.</p>
+        <p><strong>Total: $<span id="total-price">0.00</span></strong></p>
+    </div>
+
+    <script src="../js/menu.js"></script>
+</body>
+</html>
