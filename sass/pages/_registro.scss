@@ -3,68 +3,90 @@
 
 .registro-body{
     background-color: $verdeOscuro;
-    color: $blancoHumo;
-    height: 100vh;
-    .registro-container{
-        @include flex;
-        justify-content: center;
-        height: 100%;
-        text-align: center;
-        padding: 2rem;
-    }
-    form{
-        @include flex;
-        width: 100%;
-        max-width: 350px;
-        input {
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border: none;
-            border-radius: 20px;
-            font-size: 1rem;
-            background-color: $transparente;
-            color: $blancoHumo;
-            &::placeholder{
-                color: $grisClaro;
-            }
-        }
-        button{
-            padding: 1rem;
-            border: none;
-            border-radius: 25px;
-            width: 60%;
-            background-color: $doradoViejo;
-            color: $verdeOscuro;
-            font-weight: bold;
-            cursor: pointer;
-            margin-bottom: 1rem;
-            transition: background-color 0.3s ease;
-            &:hover{
-                background-color: #a89c55;
-            }
-        }
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    #mensajeError{
-        color: #ff0000; 
-        margin-top: 1rem;
-    }
-    #mensajeExito{
-        color: $doradoViejo; 
-        margin-top: 1rem;
-    }
-
-    .registro-options {
-        p{
-            margin-bottom: 0.5rem;
-        }
-        a{
+        h1{
             color: $grisClaro;
-            text-decoration: underline;
-            &:hover{
-                color: $doradoViejo;
+            padding-top: 15%;
+            margin-left: -20%;
+            font-weight: 500;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            margin-top: 5%;
+            gap: .3rem;
+
+            input{
+                background: transparent;
+                border: none;
+                border-bottom: 2px solid $doradoViejo;
+                padding: 0.75rem 0.5rem;
+                color: $blancoHumo;
+                font-size: 1rem;
+                outline: none;
+                transition: border-color 0.3s;
+
+                &::placeholder{
+                    color: $grisClaro;
+                }
+
+                &:focus{
+                    border-bottom: 2px solid $grisClaro;
+                }
+            }
+
+            .checkbox-container{
+                padding-top: 10%;
+            }
+
+            button{
+                margin-top: 1rem;
+                padding: 0.75rem;
+                background-color: $doradoViejo;
+                border: none;
+                font-size: 1rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background 0.3s;
+
+                &:hover{
+                    background-color: darken($doradoViejo, 10%)
+                }
             }
         }
+    
+
+    .login-link{
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+        color: $grisClaro;
+
+        a{
+            color: $doradoViejo;
+            text-decoration: none;
+            margin-left: 5px;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .mensaje-error,
+    .mensaje-exito{
+        margin-top: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .mensaje-error{
+        color: red;
+    }
+
+    .mensaje-exito{
+        color: lightgreen;
     }
 }
-

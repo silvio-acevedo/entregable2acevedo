@@ -1,0 +1,135 @@
+ [
+ {
+    "id": 1,
+    "nombre": "Muzzarella",
+    "precio": 10000,
+    "img": "../img/pizzas/pizza1.png",
+    "categoria": "Pizzas"
+  },
+  {
+    "id": 2,
+    "nombre": "Pepperoni",
+    "precio": 12000,
+    "img": "../img/pizzas/pizza2.png",
+    "categoria": "Pizzas"
+  },
+  {
+    "id": 3,
+    "nombre": "Especial",
+    "precio": 10000,
+    "img": "../img/pizzas/pizza3.png",
+    "categoria": "Pizzas"
+  },
+  {
+    "id": 4,
+    "nombre": "Cuatro Quesos",
+    "precio": 10000,
+    "img": "../img/pizzas/pizza4.png",
+    "categoria": "Pizzas"
+  },
+  {
+    "id": 5,
+    "nombre": "Burger Cheese",
+    "precio": 8000,
+    "img": "../img/burger/burger1.png",
+    "categoria": "Burgers"
+  },
+  {
+    "id": 6,
+    "nombre": "Burger Completa",
+    "precio": 10000,
+    "img": "../img/burger/burger2.png",
+    "categoria": "Burgers"
+  },
+  {
+    "id": 7,
+    "nombre": "Burger Simple",
+    "precio": 7000,
+    "img": "../img/burger/burger3.png",
+    "categoria": "Burgers"
+  },
+  {
+    "id": 8,
+    "nombre": "Papas con Cheddar",
+    "precio": 7000,
+    "img": "../img/papasFritas/papasFritas1.png",
+    "categoria": "Papas"
+  },
+  {
+    "id": 9,
+    "nombre": "Papas Bravas",
+    "precio": 8000,
+    "img": "../img/papasFritas/papasFritas2.png",
+    "categoria": "Papas"
+  },
+  {
+    "id": 10,
+    "nombre": "Papas",
+    "precio": 6000,
+    "img": "../img/papasFritas/papasFritas3.png",
+    "categoria": "Papas"
+  },
+  {
+    "id": 11,
+    "nombre": "IPA",
+    "precio": 7000,
+    "img": "../img/ipa.png",
+    "categoria": "Cervezas"
+  },
+  {
+    "id": 12,
+    "nombre": "Lager",
+    "precio": 7000,
+    "img": "../img/lager.png",
+    "categoria": "Cervezas"
+  },
+  {
+    "id": 13,
+    "nombre": "Stout",
+    "precio": 7000,
+    "img": "../img/stout.png",
+    "categoria": "Cervezas"
+  },
+  {
+    "id": 14,
+    "nombre": "Amber",
+    "precio": 7000,
+    "img": "../img/ambar.png",
+    "categoria": "Cervezas"
+  },
+  {
+    "id": 15,
+    "nombre": "Barleywine",
+    "precio": 7000,
+    "img": "../img/barleywine.png",
+    "categoria": "Cervezas"
+  },
+  {
+    "id": 16,
+    "nombre": "Porter",
+    "precio": 7000,
+    "img": "../img/porter.png",
+    "categoria": "Cervezas"
+  },
+  {
+    "id": 17,
+    "nombre": "Agua",
+    "precio": 2000,
+    "img": "../img/bebidas/agua.png",
+    "categoria": "Bebidas"
+  },
+  {
+    "id": 18,
+    "nombre": "Gaseosa",
+    "precio": 2500,
+    "img": "../img/bebidas/gaseosas.png",
+    "categoria": "Bebidas"
+  },
+  {
+    "id": 19,
+    "nombre": "Jugo de Naranja",
+    "precio": 2000,
+    "img": "../img/bebidas/jugoDeNaranjas.png",
+    "categoria": "Bebidas"
+  }
+]

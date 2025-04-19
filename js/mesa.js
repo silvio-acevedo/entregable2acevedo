@@ -6,10 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
 
-    if (usuarioActivo && usuarioActivo.nombre) {
-        saludo.textContent = `Hola, ${usuarioActivo.nombre}`;
-    } else {
-        saludo.textContent = "Hola, Invitado";
+    if (usuarioActivo) {
+        const nombre = usuarioActivo.nombre || usuarioActivo.username ||"Invitado";
+        saludo.textContent = `Bienvenido, ${nombre}`
     }
 
     selectMesa.addEventListener("change", () => {
@@ -31,7 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        localStorage.setItem("mesaSeleccionada", mesaSeleccionada);
+        const datosSesion = {
+            ...usuarioActivo, 
+            mesa: mesaSeleccionada
+        };
+
+        localStorage.setItem("usuarioActivo", JSON.stringify(datosSesion));
 
         window.location.href = "./menu.html";
     });

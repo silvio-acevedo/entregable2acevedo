@@ -15,60 +15,102 @@
     <!-- Icons Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <title>Cervecería Córdoba Brewery Co. - Menú</title>
 </head>
-
-<body>
+<body class="body-menu">
+    <!-- Header -->
     <header class="mesa-header">
         <div class="info-usuario">
             <span class="material-symbols-outlined">account_circle</span>
-            <span id="saludo">Bienvenido</span>
+            <span id="saludoMenu"></span>
         </div>
     </header>
-    <div class="menu">
-        <div class="card" data-price="10000">
-            <img src="" alt="Producto 1">
-            <h2>Producto 1</h2>
-            <p>$10000</p>
-            <button onclick="addToCart(10000, 'Producto 1')">Agregar al carrito</button>
-        </div>
-        <div class="card" data-price="11000">
-            <img src="" alt="Producto 2">
-            <h2>Producto 2</h2>
-            <p>$11000</p>
-            <button onclick="addToCart(11000, 'Producto 2')">Agregar al carrito</button>
-        </div>
-        <div class="card" data-price="12000">
-            <img src="" alt="Producto 3">
-            <h2>Producto 3</h2>
-            <p>$12000</p>
-            <button onclick="addToCart(12000, 'Producto 3')">Agregar al carrito</button>
-        </div>
-        <div class="card" data-price="13000">
-            <img src="" alt="Producto 4">
-            <h2>Producto 4</h2>
-            <p>$13000</p>
-            <button onclick="addToCart(13000, 'Producto 4')">Agregar al carrito</button>
-        </div>
-        <div class="card" data-price="14000">
-            <img src="" alt="Producto 5">
-            <h2>Producto 5</h2>
-            <p>$14000</p>
-            <button onclick="addToCart(14000, 'Producto 5')">Agregar al carrito</button>
-        </div>
-        <div class="card" data-price="15000">
-            <img src="" alt="Producto 6">
-            <h2>Producto 6</h2>
-            <p>$15000</p>
-            <button onclick="addToCart(15000, 'Producto 6')">Agregar al carrito</button>
-        </div>
-    </div>
 
-    <div class="cart">
-        <h3>Carrito de compras</h3>
-        <p id="cart-items">No hay productos en el carrito.</p>
-        <p><strong>Total: $<span id="total-price">0.00</span></strong></p>
+    <!-- Categorías -->
+    <nav class="categorias">
+        <button class="categoria active" data-categoria="todos">
+            <span class="material-symbols-outlined">clear_all</span>Todos
+        </button>
+        <button class="categoria" data-categoria="Pizzas">
+            <span class="material-symbols-outlined">local_pizza</span>Pizzas
+        </button>
+        <button class="categoria" data-categoria="Burgers">
+            <span class="material-symbols-outlined">lunch_dining</span>Burgers
+        </button>
+        <button class="categoria" data-categoria="Papas">
+            <span class="material-symbols-outlined">rice_bowl</span>Papas
+        </button>
+        <button class="categoria" data-categoria="Cervezas">
+            <span class="material-symbols-outlined">sports_bar</span>Cervezas
+        </button>
+        <button class="categoria" data-categoria="Bebidas">
+            <span class="material-symbols-outlined">grocery</span>Bebidas
+        </button>
+    </nav>
+
+    <!-- Main content -->
+    <main class="main-container">
+        <section class="listaDeProductos"></section>
+
+      <!-- Carrito -->
+<aside class="carrito">
+
+    <!-- Info de la mesa  -->
+    <div class="mesaInfo">
+      <h2 id="mesaSeleccionada">Mesa </h2>
     </div>
+  
+    <!-- Productos agregados -->
+    <div class="carritoItems" id="carritoItems">
+      <!-- Los productos se agregan dinámicamente acá -->
+    </div>
+  
+    <!-- Total y descuento -->
+    <div class="total">
+      <p id="subTotal">Sub Total: $0</p>
+      <p id="descuento" style="display: none;">Descuento 10%: $0</p>
+      <h3 id="totalFinal">Total: $0</h3>
+    </div>
+  
+    <!-- Mensaje de pedido -->
+    <div id="mensajePedido" class="mensajePedido" style="display: none;">
+      🧾 Tu pedido está en preparación...
+    </div>
+  
+    <!-- Botón para ordenar -->
+    <button id="ordenarBtn" class="ordenar">Ordenar</button>
+  
+    <!-- Formas de pago -->
+    <div class="formasDePago">
+      <button id="pagoEfectivo" class="pago-disabled" disabled>
+        <span class="material-symbols-outlined">payments</span> Efectivo
+      </button>
+      <button id="pagoTarjeta" class="pago-disabled" disabled>
+        <span class="material-symbols-outlined">credit_card</span> Tarjetas
+      </button>
+      <button id="pagoQR" class="pago-disabled" disabled>
+        <span class="material-symbols-outlined">qr_code_2</span> Código QR
+      </button>
+    </div>
+  
+    <!-- Sección para tarjeta o QR -->
+    <div id="formTarjeta" style="display: none;">
+      <h4>Ingresá los datos de tu tarjeta:</h4>
+      <input type="text" placeholder="Número de tarjeta">
+      <input type="text" placeholder="Nombre en la tarjeta">
+      <input type="text" placeholder="Vencimiento (MM/AA)">
+      <input type="text" placeholder="CVV">
+    </div>
+  
+    <div id="qrPago" style="display: none;">
+    </div>
+</aside>
+  
+    </main>
 
     <script src="../js/menu.js"></script>
 </body>

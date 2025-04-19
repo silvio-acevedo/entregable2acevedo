@@ -1,11 +1,7 @@
+@import "./pages/reset";
 @import "./pages/login";
 @import "./pages/registro";
 @import "./pages/mesa";
 @import "./pages/menu";
+@import "./pages/responsive"
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;    
-    font-family: "Roboto Slab"; 
-}

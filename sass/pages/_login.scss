@@ -2,11 +2,10 @@
 @import "../variables/mixin";
 
 
-body{
+.login{
     background-color: $verdeOscuro;
     color: $blancoHumo;
     height: 100vh;
-    overflow: hidden;
 }
 
 .login-container{
@@ -14,7 +13,6 @@ body{
     justify-content: center;
     height: 100%;
     text-align: center;
-    padding: 2rem;
     .logo-login{
         width: 150px;
         margin-bottom: 1rem;

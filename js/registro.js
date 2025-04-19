@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const resgistroForm = document.getElementById("registroForm");
+    const registroForm = document.getElementById("registroForm");
 
-    resgistroForm.addEventListener("submit", function (e){
+    registroForm.addEventListener("submit", function (e){
         e.preventDefault();
 
         const nombre = document.getElementById("nombre").value.trim();

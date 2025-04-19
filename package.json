@@ -7,5 +7,13 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silvio-acevedo/entregable2acevedo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/silvio-acevedo/entregable2acevedo/issues"
+  },
+  "homepage": "https://github.com/silvio-acevedo/entregable2acevedo#readme",
   "description": ""
 }
