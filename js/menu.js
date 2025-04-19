@@ -196,91 +196,127 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  //--------------- EFECTIVO
+//--------------- EFECTIVO
 
-  btnEfectivo.addEventListener("click", () => {
-    const subtotal = carritos.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
-    const descuento = subtotal * 0.1;
-    const totalConDescuento = subtotal - descuento;
+btnEfectivo.addEventListener("click", () => {
+  const nombreUsuario = localStorage.getItem("nombreUsuario") || "Invitado";
 
-    document.getElementById("totalFinal").textContent = `Total: $${totalConDescuento.toFixed(2)}`;
-    descuentoElem.style.display = 'block';
-    descuentoElem.textContent = `Descuento 10%: $${descuento.toFixed(2)}`;
+  const subtotal = carritos.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
+  const descuento = subtotal * 0.1;
+  const totalConDescuento = subtotal - descuento;
 
-    Swal.fire({
-      title: "Pagás en efectivo",
-      text: `Total con 10% de descuento: $${totalConDescuento.toFixed(2)}`,
-      icon: "info"
-    });
+  document.getElementById("totalFinal").textContent = `Total: $${totalConDescuento.toFixed(2)}`;
+  descuentoElem.style.display = 'block';
+  descuentoElem.textContent = `Descuento 10%: $${descuento.toFixed(2)}`;
+
+  Swal.fire({
+    title: `Gracias por tu compra! 💵`,
+    text: `Pagás en efectivo. Total con 10% de descuento: $${totalConDescuento.toFixed(2)}`,
+    icon: "success",
+    timer: 5000,
+    showConfirmButton: false
+  }).then(() => {
+    window.location.href = "../index.html";
   });
+});
+
 
   //--------------- TARJETAS
 
-  btnTarjeta.addEventListener("click", () => {
-    Swal.fire({
-      title: 'Ingresá los datos de tu tarjeta 💳',
-      html: `
-          <input type="text" id="nombreTitular" class="swal2-input" placeholder="Nombre del titular">
-          <input type="text" id="numeroTarjeta" class="swal2-input" placeholder="Número de tarjeta (16 dígitos)">
-          <input type="text" id="vencimiento" class="swal2-input" placeholder="Vencimiento (MM/AA)">
-          <input type="text" id="cvv" class="swal2-input" placeholder="CVV (3 dígitos)">
-      `,
-      confirmButtonText: 'Pagar',
-      showCancelButton: true,
-      focusConfirm: false,
-      preConfirm: () => {
-        const nombre = document.getElementById('nombreTitular').value.trim();
-        const numero = document.getElementById('numeroTarjeta').value.trim();
-        const vencimiento = document.getElementById('vencimiento').value.trim();
-        const cvv = document.getElementById('cvv').value.trim();
-  
-        if (!nombre || !numero || !vencimiento || !cvv) {
-          Swal.showValidationMessage('Completá todos los campos');
-          return false;
-        }
-  
-        const numeroValido = /^[0-9]{16}$/.test(numero);
-        const cvvValido = /^[0-9]{3}$/.test(cvv);
-        const vencimientoValido = /^(0[1-9]|1[0-2])\/\d{2}$/.test(vencimiento);
-  
-        if (!numeroValido) {
-          Swal.showValidationMessage('El número de tarjeta debe tener 16 dígitos');
-          return false;
-        }
-  
-        if (!vencimientoValido) {
-          Swal.showValidationMessage('Formato de vencimiento inválido (MM/AA)');
-          return false;
-        }
-  
-        if (!cvvValido) {
-          Swal.showValidationMessage('El CVV debe tener 3 dígitos');
-          return false;
-        }
-  
-        return { nombre, numero, vencimiento, cvv };
-      }
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          icon: 'success',
-          title: 'Pago exitoso',
-          text: `Gracias por tu compra, ${result.value.nombre}!`,
-          timer: 2000,
-          showConfirmButton: false
-        }).then(() => {
-          window.location.href = "login.html";
-        });
-      }
-    });
-  });
-  
+btnTarjeta.addEventListener("click", () => {
+  Swal.fire({
+    title: 'Ingresá los datos de tu tarjeta 💳',
+    html: `
+        <input type="text" id="nombreTitular" class="swal2-input" placeholder="Nombre del titular">
+        <input type="text" id="numeroTarjeta" class="swal2-input" placeholder="Número de tarjeta (16 dígitos)">
+        <input type="text" id="vencimiento" class="swal2-input" placeholder="Vencimiento (MM/AA)">
+        <input type="text" id="cvv" class="swal2-input" placeholder="CVV (3 dígitos)">
+    `,
+    confirmButtonText: 'Pagar',
+    showCancelButton: true,
+    focusConfirm: false,
+    preConfirm: () => {
+      const nombre = document.getElementById('nombreTitular').value.trim();
+      const numero = document.getElementById('numeroTarjeta').value.trim();
+      const vencimiento = document.getElementById('vencimiento').value.trim();
+      const cvv = document.getElementById('cvv').value.trim();
 
-  //--------------- MERCADO PAGO
+      if (!nombre || !numero || !vencimiento || !cvv) {
+        Swal.showValidationMessage('Completá todos los campos');
+        return false;
+      }
 
-  btnQR.addEventListener("click", () => {
-    formTarjeta.style.display = "none";
-    qrPago.style.display = "block";
-    window.open("https://www.mercadopago.com.ar", "_blank");
+      const numeroValido = /^[0-9]{16}$/.test(numero);
+      const cvvValido = /^[0-9]{3}$/.test(cvv);
+      const vencimientoValido = /^(0[1-9]|1[0-2])\/\d{2}$/.test(vencimiento);
+
+      if (!numeroValido) {
+        Swal.showValidationMessage('El número de tarjeta debe tener 16 dígitos');
+        return false;
+      }
+
+      if (!vencimientoValido) {
+        Swal.showValidationMessage('Formato de vencimiento inválido (MM/AA)');
+        return false;
+      }
+
+      const [mesStr, anioStr] = vencimiento.split("/");
+      const mes = parseInt(mesStr, 10);
+      const anio = 2000 + parseInt(anioStr, 10); 
+
+      const fechaActual = new Date();
+      const mesActual = fechaActual.getMonth() + 1; 
+      const anioActual = fechaActual.getFullYear();
+
+      if (anio < anioActual || (anio === anioActual && mes < mesActual)) {
+        Swal.showValidationMessage('La tarjeta ya está vencida');
+        return false;
+      }
+
+      if (!cvvValido) {
+        Swal.showValidationMessage('El CVV debe tener 3 dígitos');
+        return false;
+      }
+
+      return { nombre, numero, vencimiento, cvv };
+    }
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        icon: 'success',
+        title: 'Pago exitoso',
+        text: `Gracias por tu compra!`,
+        timer: 5000,
+        showConfirmButton: false
+      }).then(() => {
+        window.location.href = "../index.html";
+      });
+    }
   });
+});
+
+//--------------- MERCADO PAGO
+
+btnQR.addEventListener("click", () => {
+  formTarjeta.style.display = "none";
+  qrPago.style.display = "block";
+
+  const pagoVentana = window.open("https://www.mercadopago.com.ar", "_blank");
+
+  const chequeoIntervalo = setInterval(() => {
+    if (pagoVentana.closed) {
+      clearInterval(chequeoIntervalo);
+      
+      Swal.fire({
+        icon: 'success',
+        title: '¡Gracias por tu compra!',
+        text: 'Te estamos redirigiendo al inicio...',
+        timer: 5000,
+        showConfirmButton: false
+      }).then(() => {
+        window.location.href = "../index.html";
+      });
+    }
+  }, 1000); 
+});
 });
